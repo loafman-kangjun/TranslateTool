@@ -1,0 +1,1 @@
+nuitka --standalone --windows-disable-console --show-progress --plugin-enable=tk-inter .\main.py --output-dir=out --onefile --follow-imports
