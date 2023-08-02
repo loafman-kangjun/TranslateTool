@@ -2,10 +2,17 @@ import tkinter as tk
 import ui
 import util
 
-ui_main = ui.main.MainWindow
+
+def main_window():
+    ui.main.MainWindow(root)
+
+
+def setting_window():
+    ui.setting.MainWindow(root)
+
 
 if __name__ == "__main__":
     util.file.setting('./setting.json')
     root = tk.Tk()
-    app = ui_main(root)
+    main_window()
     root.mainloop()
