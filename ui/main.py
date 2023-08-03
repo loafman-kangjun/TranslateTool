@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+import main
 
 
 class MainWindow:
@@ -7,7 +8,7 @@ class MainWindow:
         self.root = root
         self.root.title("生草机")
         self.root.geometry("800x600")
-        self.root.resizable(0,0)
+        self.root.resizable(0, 0)
 
         self.label_input = tk.Label(root, text="请输入要生草的内容：", font=("Microsoft YaHei", 11))
         self.label_input.grid(row=0, column=0, padx=5, pady=5)
@@ -30,6 +31,9 @@ class MainWindow:
         self.entry_timeout.insert(0, "10")
 
         self.button_start = tk.Button(root, text="开始翻译", font=("Microsoft YaHei", 11), )  # command=self.start
+        self.button_start.grid(row=2, column=4, padx=5, pady=5)
+
+        self.button_start = tk.Button(root, text="aaa", font=("Microsoft YaHei", 11))  # command=self.start
         self.button_start.grid(row=2, column=4, padx=5, pady=5)
 
         self.label_output = tk.Label(root, text="生草结果：", font=("Microsoft YaHei", 11))
