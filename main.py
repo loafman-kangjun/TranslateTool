@@ -1,4 +1,5 @@
 from tkinter import *
+import util
 
 
 class MainWindow:
@@ -33,6 +34,7 @@ class SettingWindow(Toplevel):
 
 
 if __name__ == '__main__':
+    util.file.init('./setting.json')
     root = Tk()
     MainWindow(root)
     root.mainloop()
