@@ -13,7 +13,7 @@ class MainWindow:
         self.title_label.place(x=5, y=5, width=110, height=30)
 
         self.original_text = Text(root)
-        self.original_text.place(x=5, y=40, width=575, height=140)
+        self.original_text.place(x=5, y=40, width=573, height=140)
         self.original_scroll = Scrollbar(root)
         self.original_scroll.place(x=580, y=40, width=17, height=140)
 
