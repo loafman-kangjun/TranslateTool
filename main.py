@@ -8,8 +8,8 @@ class MainWindow:
         self.root.geometry("400x600")
         self.root.resizable(0, 0)
 
-        self.root.button_setting = Button(root, text="打开设置", font=("Microsoft YaHei", 11), command=self.OpenSetting)
-        self.root.button_setting.grid(row=7, column=0, columnspan=2, padx=5, pady=5)
+        self.button_setting = Button(root, text="打开设置", font=("Microsoft YaHei", 11), command=self.OpenSetting)
+        self.button_setting.grid(row=7, column=0, columnspan=2, padx=5, pady=5)
 
     @staticmethod
     def OpenSetting():
