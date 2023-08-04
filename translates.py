@@ -14,6 +14,13 @@ languages = ['af-ZA', 'sq-AL', 'am-ET', 'ar-SA', 'hy-AM', 'az-AZ', 'bjs-BB', 'rm
              'tpi-PG', 'tkl-TK', 'to-TO', 'tn-BW', 'tr-TR', 'tk-TM', 'tvl-TV', 'uk-UA', 'ppk-ID', 'uz-UZ', 'vi-VN',
              'wls-WF', 'cy-GB', 'wo-SN', 'xh-ZA', 'yi-YD', 'zu-ZA']
 
+
+def fanyi(src, email, flang, tlang):
+    __translator = Translator(from_lang=flang, to_lang=tlang, email=email, provider="mymemory")
+    __translation = __translator.translate(src)
+    return __translation
+
+
 if __name__ == '__main__':
     translator = Translator(from_lang="zh-CN", to_lang="tl-PH", email="kangjun1120@126.com", provider="mymemory")
     translation = translator.translate("床前明月光，疑是地上霜;举头望明月,低头思故乡")
