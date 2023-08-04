@@ -15,13 +15,11 @@ languages = ['af-ZA', 'sq-AL', 'am-ET', 'ar-SA', 'hy-AM', 'az-AZ', 'bjs-BB', 'rm
              'wls-WF', 'cy-GB', 'wo-SN', 'xh-ZA', 'yi-YD', 'zu-ZA']
 
 
-def fanyi(src, email, flang, tlang):
+def fanyi(src, email='example@domin.com', flang='zh-CN', tlang='zh-CN'):
     __translator = Translator(from_lang=flang, to_lang=tlang, email=email, provider="mymemory")
     __translation = __translator.translate(src)
     return __translation
 
 
 if __name__ == '__main__':
-    translator = Translator(from_lang="zh-CN", to_lang="tl-PH", email="kangjun1120@126.com", provider="mymemory")
-    translation = translator.translate("床前明月光，疑是地上霜;举头望明月,低头思故乡")
-    print(translation)
+    print(fanyi('我真谢谢你', email='kangjun1120@126.com', flang='zh-CN', tlang='uk-UA'))
