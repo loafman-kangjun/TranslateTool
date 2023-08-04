@@ -22,4 +22,4 @@ def fanyi(src, email='example@domin.com', flang='zh-CN', tlang='zh-CN'):
 
 
 if __name__ == '__main__':
-    print(fanyi('我真谢谢你', email='kangjun1120@126.com', flang='zh-CN', tlang='uk-UA'))
+    print(fanyi('我真谢谢你', email='kangjun1120@126.com', flang='zh-CN', tlang='sm-WS'))
