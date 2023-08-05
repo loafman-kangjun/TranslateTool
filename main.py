@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter.ttk import *
 import util
 import translates
 import random
@@ -21,9 +22,11 @@ class MainWindow:
         self.original_scroll.config(command=self.original_text.yview)
         self.original_text.config(yscrollcommand=self.original_scroll.set)
 
-        self.button_setting = Button(__root, text="打开设置", font=("Microsoft YaHei", 11), command=self.translate)
+        self.button_setting = Button(__root, text="打开设置", command=self.translate)
         self.button_setting.place(x=5, y=190, width=50, height=50)
-        #
+
+        self.translate_progressbar = Progressbar(__root)
+        self.translate_progressbar.place(x=5, y=240, width=590, height=20)
         # self.button_setting = Button(root, text="打开设置", font=("Microsoft YaHei", 11), command=self.OpenSetting)
         # self.button_setting.grid(row=7, column=0, columnspan=2, padx=5, pady=5)
 
@@ -33,7 +36,8 @@ class MainWindow:
 
     def translate(self):
         __original = self.original_text.get("1.0", "end-1c")
-        translates.fanyi(__original)
+        __translation = translates.fanyi(__original)
+        print(__translation)
 
 
 class SettingWindow(Toplevel):

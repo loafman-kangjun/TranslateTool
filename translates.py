@@ -14,6 +14,7 @@ languages = ['af-ZA', 'sq-AL', 'am-ET', 'ar-SA', 'hy-AM', 'az-AZ', 'bjs-BB', 'rm
              'tpi-PG', 'tkl-TK', 'to-TO', 'tn-BW', 'tr-TR', 'tk-TM', 'tvl-TV', 'uk-UA', 'ppk-ID', 'uz-UZ', 'vi-VN',
              'wls-WF', 'cy-GB', 'wo-SN', 'xh-ZA', 'yi-YD', 'zu-ZA']
 
+# random.choice(data)
 
 def fanyi(src, email='example@domin.com', flang='zh-CN', tlang='zh-CN'):
     __translator = Translator(from_lang=flang, to_lang=tlang, email=email, provider="mymemory")
