@@ -23,11 +23,17 @@ class MainWindow:
         self.original_scroll.config(command=self.original_text.yview)
         self.original_text.config(yscrollcommand=self.original_scroll.set)
 
-        self.button_setting = Button(__root, text="打开设置", command=self.translate)
-        self.button_setting.place(x=5, y=190, width=50, height=50)
+        self.times_label = Label(__root, text="翻译次数：", anchor="center", font=("Microsoft YaHei", 11))
+        self.times_label.place(x=5, y=190, width=70, height=30)
+
+        self.translate_times = Entry(__root)
+        self.translate_times.place(x=79, y=190.5, width=55, height=30)
+
+        self.translate_button = Button(__root, text="翻译", command=self.translate)
+        self.translate_button.place(x=140, y=190.5, width=50, height=30)
 
         self.translate_progressbar = Progressbar(__root)
-        self.translate_progressbar.place(x=5, y=240, width=590, height=20)
+        self.translate_progressbar.place(x=199, y=196, width=394, height=21)
         # self.button_setting = Button(root, text="打开设置", font=("Microsoft YaHei", 11), command=self.OpenSetting)
         # self.button_setting.grid(row=7, column=0, columnspan=2, padx=5, pady=5)
 
@@ -37,12 +43,13 @@ class MainWindow:
 
     def translate(self):
         __original = self.original_text.get("1.0", "end-1c")
+        __times = self.translate_times.get()
         for i in range(100):
             self.translate_progressbar['value'] = i + 1
             root.update()
             time.sleep(0.05)
         __translation = translates.fanyi(__original)
-        print(__translation)
+        print(__translation + __times)
 
 
 class SettingWindow(Toplevel):
