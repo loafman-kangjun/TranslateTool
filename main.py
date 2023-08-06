@@ -1,3 +1,4 @@
+import time
 from tkinter import *
 from tkinter.ttk import *
 import util
@@ -36,6 +37,10 @@ class MainWindow:
 
     def translate(self):
         __original = self.original_text.get("1.0", "end-1c")
+        for i in range(100):
+            self.translate_progressbar['value'] = i + 1
+            root.update()
+            time.sleep(0.05)
         __translation = translates.fanyi(__original)
         print(__translation)
 
@@ -58,7 +63,6 @@ class SettingWindow(Toplevel):
 
 if __name__ == '__main__':
     util.file.init('./setting.json')
-    print(translates.languages)
     root = Tk()
     MainWindow(root)
     root.mainloop()
