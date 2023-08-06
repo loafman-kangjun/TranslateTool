@@ -34,8 +34,18 @@ class MainWindow:
 
         self.translate_progressbar = Progressbar(__root)
         self.translate_progressbar.place(x=199, y=196, width=394, height=21)
-        # self.button_setting = Button(root, text="打开设置", font=("Microsoft YaHei", 11), command=self.OpenSetting)
-        # self.button_setting.grid(row=7, column=0, columnspan=2, padx=5, pady=5)
+
+        self.translation_text = Text(__root)
+        self.translation_text.place(x=5, y=230, width=573, height=140)
+        self.translation_scroll = Scrollbar(__root)
+        self.translation_scroll.place(x=580, y=230, width=17, height=140)
+        self.translation_scroll.config(command=self.translation_text.yview)
+        self.translation_text.config(yscrollcommand=self.translation_scroll.set)
+
+        self.setting_img = PhotoImage(file="./ico/setting.png").subsample(2, 2)
+
+        self.button_setting = Button(__root, image=self.setting_img, command=self.OpenSetting)
+        self.button_setting.place(x=568, y=5, width=30, height=30)
 
     @staticmethod
     def OpenSetting():
@@ -61,10 +71,10 @@ class SettingWindow(Toplevel):
         self.resizable(height=False, width=False)
         self.grab_set()
 
-        self.label = Label(self, text="这是设置窗口", font=("Microsoft YaHei", 11))
+        self.label = Label(self, text="没完成啊啊啊")
         self.label.pack(pady=20)
 
-        self.button_ok = Button(self, text="确定", font=("Microsoft YaHei", 11))
+        self.button_ok = Button(self, text="确定", command=self.destroy)
         self.button_ok.pack(pady=10)
 
 
