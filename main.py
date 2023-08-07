@@ -1,10 +1,13 @@
+import os
+import sys
 import time
 from tkinter import *
 from tkinter.ttk import *
 import util
 import translates
 import random
-
+import base64
+import img
 
 class MainWindow:
     def __init__(self, __root):
@@ -42,7 +45,7 @@ class MainWindow:
         self.translation_scroll.config(command=self.translation_text.yview)
         self.translation_text.config(yscrollcommand=self.translation_scroll.set)
 
-        self.setting_img = PhotoImage(file="./ico/setting.png").subsample(2, 2)
+        self.setting_img = PhotoImage(data=(base64.b64decode(img.setting))).subsample(2, 2)
 
         self.button_setting = Button(__root, image=self.setting_img, command=self.OpenSetting)
         self.button_setting.place(x=568, y=5, width=30, height=30)
