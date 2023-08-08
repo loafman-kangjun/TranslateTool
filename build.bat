@@ -1,1 +1,1 @@
-nuitka --standalone --show-progress --plugin-enable=tk-inter .\main.py --output-dir=out --onefile --include-data-dir=ico=ico
+nuitka --standalone --show-progress --plugin-enable=tk-inter .\main.py --output-dir=out --onefile

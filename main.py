@@ -1,13 +1,13 @@
-import os
-import sys
 import time
 from tkinter import *
+from tkinter import messagebox
 from tkinter.ttk import *
 import util
 import translates
 import random
 import base64
 import img
+
 
 class MainWindow:
     def __init__(self, __root):
@@ -57,12 +57,16 @@ class MainWindow:
     def translate(self):
         __original = self.original_text.get("1.0", "end-1c")
         __times = self.translate_times.get()
+        try:
+            __times = int(__times)
+        except ValueError:
+            messagebox.showwarning(title="次数错误", message="请输入合法数字")
+            return
         for i in range(100):
             self.translate_progressbar['value'] = i + 1
             root.update()
             time.sleep(0.05)
-        __translation = translates.fanyi(__original)
-        print(__translation + __times)
+            __translation = translates.fanyi(__original)
 
 
 class SettingWindow(Toplevel):
